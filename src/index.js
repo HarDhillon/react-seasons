@@ -24,13 +24,7 @@ class App extends React.Component {
     )
   }
 
-  // called when updates
-  componentDidUpdate () {
-    console.log("My component was just updated")
-  }
-
-  // We have to define render in react
-  render() {
+  renderContent () {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage} </div>;
     }
@@ -40,6 +34,16 @@ class App extends React.Component {
     }
     
     return <Spinner message="Please allow location" />;
+  }
+
+  // We have to define render in react
+  render() {
+    
+    return (
+      <div className="border red">
+        { this.renderContent() }
+      </div>
+    );
   }
 }
 
