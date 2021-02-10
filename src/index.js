@@ -10,20 +10,26 @@ class App extends React.Component {
     super(props);
     // intitalizing the state. MUST be done when a component is created
     // This the ONLY time to do direct assignment, else call setState.
-    this.state = { lat: null }; // default it to null
+    this.state = { lat: null, errorMessage: "" }; // default it to null
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         // use setState to update state!
         this.setState({ lat: position.coords.latitude });
       },
-      (err) => console.log(err)
+      (err) => this.setState({ errorMessage: err.message })
     );
   }
 
   // We have to define render in react
   render() {
-    return <div>Latitude: {this.state.lat} </div>
+    return (
+      <div>
+        Latitude: {this.state.lat} 
+        <br />
+        Error: {this.state.errorMessage}
+      </div>
+    );
   }
 }
 
