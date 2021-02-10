@@ -9,6 +9,7 @@ class App extends React.Component {
     // We do this to reference the parent constructor. We HAVE to do this every time
     super(props);
     // intitalizing the state. MUST be done when a component is created
+    // This the ONLY time to do direct assignment, else call setState.
     this.state = { lat: null }; // default it to null
 
     window.navigator.geolocation.getCurrentPosition(
