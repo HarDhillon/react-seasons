@@ -6,14 +6,16 @@ import Spinner from './Spinner';
 
 class App extends React.Component {
 
-  // Constructor is specific to JS not react. Called first in a class
-  constructor(props) {
-    // We do this to reference the parent constructor. We HAVE to do this every time
-    super(props);
-    // intitalizing the state. MUST be done when a component is created
-    // This the ONLY time to do direct assignment, else call setState.
-    this.state = { lat: null, errorMessage: "" };
-  }
+  // constructor(props) {
+  //   // We do this to reference the parent constructor.
+  //   super(props);
+  //   // intitalizing the state. MUST be done when a component is created
+  //   // This the ONLY time to do direct assignment, else call setState.
+  //   this.state = { lat: null, errorMessage: "" };
+  // }
+
+  // Babel allows us to write the above like this:
+  state = { lat: nill, errorMessage: '' }
 
   // this function is called when rendered for first time
   componentDidMount () {
