@@ -15,7 +15,7 @@ class App extends React.Component {
   // }
 
   // Babel allows us to write the above like this:
-  state = { lat: nill, errorMessage: '' }
+  state = { lat: null, errorMessage: '' }
 
   // this function is called when rendered for first time
   componentDidMount () {
